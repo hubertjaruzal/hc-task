@@ -6,5 +6,27 @@
     flex-direction: column;
     align-items: center;
     background: white;
-    margin: 0 0 70px 0;
+    &:not(:last-child) {
+        margin: 0 0 70px 0;
+    }
+
+    &-creation-date {
+        font-size: 10px;
+        color: #8b939a;
+        margin: 2px 0 0 0;
+    }
+
+    &-title {
+        font-size: 20px;
+        color: black;
+        margin: 20px 0;
+    }
+
+    &-opinion {
+        display: flex;
+    }
+
+    &-desc {
+        font-size: 14px;
+    }
 }

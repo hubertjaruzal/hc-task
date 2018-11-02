@@ -11,10 +11,21 @@ class Box extends Component {
   render() {
     return (
       <li className="box">
-        <User/>
-        <Thumb/>
-        <Rate/>
-        <Comment/>
+        <User user={this.props.review.user}/>
+        <span className="box-creation-date">{this.props.review.creation_date}</span>
+        <h2 className="box-title">{this.props.review.title}</h2>
+        <div className="box-opinion">
+          <Thumb like={this.props.review.like}/>
+          <Rate rate={this.props.review.rate}/>
+        </div>
+        <p className="box-desc">
+          {this.props.review.desc}
+        </p>
+        {
+            this.props.review.comment ?
+            <Comment thumb={this.props.review.comment}/> :
+            <button>Add Comment</button>
+        }
       </li>
     );
   }

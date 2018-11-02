@@ -4,7 +4,7 @@ class Rate extends Component {
   render() {
     return (
       <div>
-        Rate
+        {`${this.props.rate}/6`}
       </div>
     );
   }
