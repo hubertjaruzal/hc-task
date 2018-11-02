@@ -23,6 +23,7 @@ class App extends Component {
               <Route path="/settings" component={Settings} />
             </section>
           </div>
+          <footer>© 1999 - 2016 HolidayCheck AG</footer>
         </div>
       </Router>
     );
