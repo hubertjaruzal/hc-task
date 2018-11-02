@@ -1,7 +1,17 @@
-.thumb-positive {
+.thumb {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  &-positive {
     background: #4cb03f;
-}
-
-.thumb-negative {
+  }
+  
+  &-negative {
     background: #ee4132;
+  }
+
+  svg {
+    color: white;
+  }
 }
