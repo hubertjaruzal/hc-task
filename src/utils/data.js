@@ -1,5 +1,5 @@
 export const user = {
-    avatar: '',
+    avatar: 'https://randomuser.me/api/portraits/women/64.jpg',
     name: 'Judith Wilmers',
     role: 'Hotel Manager'
 }

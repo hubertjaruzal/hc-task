@@ -23,8 +23,8 @@ class Box extends Component {
         </p>
         {
             this.props.review.comment ?
-            <Comment thumb={this.props.review.comment}/> :
-            <button>Add Comment</button>
+            <Comment comment={this.props.review.comment}/> :
+            <button className="add-comment-btn">Add Comment</button>
         }
       </li>
     );

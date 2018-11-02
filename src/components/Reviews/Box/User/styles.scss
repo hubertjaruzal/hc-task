@@ -1,11 +1,11 @@
 @import "src/utils/variables.scss";
 
-.user {
+.review-user {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  &-avatar {
+  .user-avatar {
     width: 70px;
     height: 70px;
     border-radius: 100px;
@@ -13,7 +13,7 @@
     margin: -35px 0 0 0;
   }
   
-  &-name {
+  .user-name {
     color: $primary-color;
     font-weight: 600;
     font-size: 14px;

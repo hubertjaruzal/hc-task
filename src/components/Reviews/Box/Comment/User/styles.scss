@@ -1,0 +1,25 @@
+.comment-user {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% - 35px);
+    align-items: center;
+    height: 110px;
+
+    .user-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 100px;
+        border: 2px solid #ecf0f2;
+    }
+
+    .user-name {
+        margin: 8px 0 0 0;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .user-role {
+        font-size: 10px;
+    }
+}
