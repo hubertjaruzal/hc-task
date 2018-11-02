@@ -8,7 +8,7 @@ import './styles.scss';
 class Reviews extends Component {
   render() {
     return (
-      <ul>
+      <ul className="review-list">
         {
           reviews.map((review) => (
             <Box 
