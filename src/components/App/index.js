@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from '../Header/';
-import Dashboard from '../Dashboard/';
-import Reviews from '../Reviews/';
-import Settings from '../Settings/';
-import HotelManager from '../HotelManager/';
+import Header from '../Header';
+import Dashboard from '../Dashboard';
+import Reviews from '../Reviews';
+import Settings from '../Settings';
+import HotelManager from '../HotelManager';
 
 import './styles.scss';
 
