@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 
+import Box from './Box';
+
+import './styles.scss';
+
 class Reviews extends Component {
   render() {
     return (
-      <div>
-        Reviews
-      </div>
+      <ul>
+        <Box/>
+        <Box/>
+        <Box/>
+      </ul>
     );
   }
 }
