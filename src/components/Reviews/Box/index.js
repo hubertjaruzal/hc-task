@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import User from './User';
 import Thumb from './Thumb';
@@ -28,7 +29,10 @@ class Box extends Component {
   render() {
     return (
       <li className="box">
-        <User user={this.props.review.user}/>
+        <User
+          avatar={this.props.review.user.avatar}
+          name={this.props.review.user.name}
+        />
         <span className="box-creation-date">{this.props.review.creation_date}</span>
         <h2 className="box-title">{this.props.review.title}</h2>
         <div className="box-opinion">
@@ -50,5 +54,9 @@ class Box extends Component {
     );
   }
 }
+
+Box.propTypes = {
+  review: PropTypes.object,
+};
 
 export default Box;

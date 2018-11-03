@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import User from './User';
 
 import './styles.scss';
@@ -30,10 +32,18 @@ class Comment extends Component {
         >
           {this.props.comment.text}
         </p>
-        <User user={this.props.comment.user} />
+        <User 
+          name={this.props.comment.user.name}
+          role={this.props.comment.user.role}
+          avatar={this.props.comment.user.avatar}
+        />
       </div>
     );
   }
 }
+
+Comment.propTypes = {
+  comment: PropTypes.object,
+};
 
 export default Comment;
