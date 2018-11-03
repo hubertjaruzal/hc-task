@@ -48,7 +48,7 @@ class Box extends Component {
         {
             this.props.review.comment ?
             <Comment comment={this.props.review.comment}/> :
-            <AddComment/>
+            <AddComment reviewID={this.props.review.id}/>
         }
       </li>
     );

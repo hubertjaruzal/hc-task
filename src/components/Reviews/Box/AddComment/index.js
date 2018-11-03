@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { addComment } from '../../../../redux/actions/Reviews';
 
 import './styles.scss';
 
@@ -30,6 +35,7 @@ class AddComment extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.addComment(this.props.reviewID, this.state.commentValue);
   }
 
   render() {
@@ -57,4 +63,16 @@ class AddComment extends Component {
   }
 }
 
-export default AddComment;
+AddComment.propTypes = {
+  revaddCommentiew: PropTypes.func,
+  reviewID: PropTypes.number,
+};
+
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    addComment,
+  }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(AddComment);

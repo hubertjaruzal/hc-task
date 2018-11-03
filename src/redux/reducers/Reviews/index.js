@@ -10,7 +10,7 @@ const reviews = (state = initialState, action) => {
       ...state,
       isLoading: true,
     };
-  case 'GET_REVIEWS':
+  case 'SET_REVIEWS':
     return {
       ...state,
       isLoading: false,
