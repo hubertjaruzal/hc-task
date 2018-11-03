@@ -12,6 +12,11 @@
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
+  transition: all .25s ease-in;
+  
+  &:hover {
+    background: #ffc107;
+  }
 
   &:disabled {
     background: #dfe2e6;
