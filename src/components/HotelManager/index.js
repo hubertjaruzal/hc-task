@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class HotelManager extends Component {
-  render() {
-    return (
-      <div>
-        HotelManager
-      </div>
-    );
-  }
+import BoxContainer from '../Common/BoxContainer';
+
+import './styles.scss';
+
+const HotelManager = () => {
+  return (
+    <BoxContainer>
+      <span>Hotel Manager</span>
+    </BoxContainer>
+  );
 }
 
 export default HotelManager;

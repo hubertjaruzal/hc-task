@@ -4,45 +4,6 @@
   width: 100%;
   align-items: center;
 
-  &-btn {
-    width: 200px;
-    margin: 20px 0 0 0;
-    outline: none;
-    background: #fed740;
-    padding: 20px 40px;
-    color: #005aa3;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-
-    &:disabled {
-      background: #dfe2e6;
-      color: #929292;
-      cursor: auto;
-    }
-
-    > .spinner-container {
-      .spinner {
-        width: 15px;
-        height: 15px;
-
-        div {
-          left: calc(50% - 7px);
-          width: 15px;
-          height: 15px;
-          border: 2px solid #fff;
-          border-color: #929292 transparent transparent transparent;
-        }
-      }
-
-      span {
-        display: none;
-      }
-    }
-  }
-
   &-form {
     display: flex;
     flex-direction: column;

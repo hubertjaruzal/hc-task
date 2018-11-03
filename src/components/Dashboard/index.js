@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Dashboard extends Component {
-  render() {
-    return (
-      <div>
-        Dashboard
-      </div>
-    );
-  }
+import BoxContainer from '../Common/BoxContainer';
+
+import './styles.scss';
+
+const Dashboard = () => {
+  return (
+    <BoxContainer>
+      <span>Dashboard</span>
+    </BoxContainer>
+  );
 }
 
 export default Dashboard;

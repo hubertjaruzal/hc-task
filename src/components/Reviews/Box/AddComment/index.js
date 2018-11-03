@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Spinner from '../../../Common/Spinner';
+import Button from '../../../Common/Button';
 
 import { addComment } from '../../../../redux/actions/Reviews';
 
@@ -54,9 +54,10 @@ class AddComment extends Component {
       <div className="add-comment">
         {
           !this.state.showCommentArea ?
-          <button className="add-comment-btn" onClick={this.handleAddCommentClick}>
-            Add Comment
-          </button> :
+          <Button
+            onClick={this.handleAddCommentClick}
+            text="Add Comment"
+          /> :
           <form className="add-comment-form" onSubmit={this.handleSubmit}>
             <textarea 
               className="add-comment-textarea"
@@ -64,17 +65,13 @@ class AddComment extends Component {
               value={this.state.commentValue}
               onChange={this.handleCommentChange}
             />
-            <button
+            <Button
+              value={this.state.commentValue}
+              isLoading={this.state.isLoading}
               disabled={!this.state.commentValue.length || this.state.isLoading}
-              className="add-comment-btn"
               type="submit"
-            >
-              {
-                this.state.isLoading ?
-                <Spinner/> :
-                <span>Add Comment</span>
-              }
-            </button>
+              text="Add Comment"
+            />
           </form>
         }
       </div>
@@ -86,7 +83,6 @@ AddComment.propTypes = {
   revaddCommentiew: PropTypes.func,
   reviewID: PropTypes.number,
 };
-
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
