@@ -16,6 +16,31 @@
     font-weight: 700;
     font-size: 12px;
     text-transform: uppercase;
+
+    &:disabled {
+      background: #dfe2e6;
+      color: #929292;
+      cursor: auto;
+    }
+
+    > .spinner-container {
+      .spinner {
+        width: 15px;
+        height: 15px;
+
+        div {
+          left: calc(50% - 7px);
+          width: 15px;
+          height: 15px;
+          border: 2px solid #fff;
+          border-color: #929292 transparent transparent transparent;
+        }
+      }
+
+      span {
+        display: none;
+      }
+    }
   }
 
   &-form {

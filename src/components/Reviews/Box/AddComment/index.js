@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import Spinner from '../../../Common/Spinner';
+
 import { addComment } from '../../../../redux/actions/Reviews';
 
 import './styles.scss';
@@ -13,12 +15,14 @@ class AddComment extends Component {
 
     this.state = {
       showCommentArea: false,
-      commentValue: ''
+      commentValue: '',
+      isLoading: false
     }
 
     this.handleAddCommentClick = this.handleAddCommentClick.bind(this);
     this.handleCommentChange = this.handleCommentChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setIsLoading = this.setIsLoading.bind(this);
   }
 
   handleAddCommentClick() {
@@ -33,9 +37,16 @@ class AddComment extends Component {
     });
   }
 
+  setIsLoading(value) {
+    this.setState({
+      isLoading: value
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addComment(this.props.reviewID, this.state.commentValue);
+    this.setIsLoading(true);
+    this.props.addComment(this.props.reviewID, this.state.commentValue, () => this.setIsLoading(false));
   }
 
   render() {
@@ -53,8 +64,16 @@ class AddComment extends Component {
               value={this.state.commentValue}
               onChange={this.handleCommentChange}
             />
-            <button className="add-comment-btn" type="submit">
-              Add Comment
+            <button
+              disabled={!this.state.commentValue.length || this.state.isLoading}
+              className="add-comment-btn"
+              type="submit"
+            >
+              {
+                this.state.isLoading ?
+                <Spinner/> :
+                <span>Add Comment</span>
+              }
             </button>
           </form>
         }

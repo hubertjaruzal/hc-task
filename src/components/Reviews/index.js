@@ -11,22 +11,39 @@ import { getReviews } from '../../redux/actions/Reviews';
 import './styles.scss';
 
 class Reviews extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: false
+    }
+
+    this.setIsLoading = this.setIsLoading.bind(this);
+  }
+
   componentDidMount() {
-    this.props.getReviews();
+    this.setIsLoading(true);
+    this.props.getReviews(() => this.setIsLoading(false));
+  }
+
+  setIsLoading(value) {
+    this.setState({
+      isLoading: value
+    });
   }
 
   render() {
     return (
       <ul className="review-list">
         {
-          this.props.reviews.list.length ?
+          this.state.isLoading ?
+          <Spinner /> :
           this.props.reviews.list.map((review) => (
             <Box 
               key={review.id}
               review={review}
             />
-          )) :
-          <Spinner />
+          ))
         }
       </ul>
     );
