@@ -1,10 +1,12 @@
+@import "src/utils/variables.scss";
+
 .common-btn {
   width: 200px;
   margin: 20px 0 0 0;
   outline: none;
-  background: #fed740;
+  background: $secondary-color;
   padding: 20px 40px;
-  color: #005aa3;
+  color: $primary-color;
   border: none;
   cursor: pointer;
   font-weight: 700;
