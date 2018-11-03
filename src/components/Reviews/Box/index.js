@@ -4,6 +4,7 @@ import User from './User';
 import Thumb from './Thumb';
 import Rate from './Rate';
 import Comment from './Comment';
+import AddComment from './AddComment';
 
 import './styles.scss';
 
@@ -12,7 +13,7 @@ class Box extends Component {
     super(props);
 
     this.state = {
-      showFullDesc: false
+      showFullDesc: false,
     }
     
     this.expandDesc = this.expandDesc.bind(this);
@@ -43,7 +44,7 @@ class Box extends Component {
         {
             this.props.review.comment ?
             <Comment comment={this.props.review.comment}/> :
-            <button className="add-comment-btn">Add Comment</button>
+            <AddComment/>
         }
       </li>
     );

@@ -35,6 +35,7 @@
         position: relative;
         cursor: pointer;
         transition: max-height 1s ease-in;
+
         &:after {
           content: '';
           width: 100%;
