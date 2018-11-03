@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import { reviews, user } from '../../../utils/data';
 
 export const doesReviewsExists = () => {
@@ -27,7 +29,7 @@ const getReviews = (cb = () => {}) => (dispatch) => {
 const addComment = (reviewID, text, cb = () => {}) => (dispatch, getState) => {
   const comment = {
     text,
-    creation_date: '21 September 2016',
+    creation_date: moment().format('D MMMM YYYY'),
     user
   }
   const reviews = getState().reviews.list;
