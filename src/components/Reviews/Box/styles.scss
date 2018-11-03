@@ -42,6 +42,8 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    transition: max-height 1s ease-in;
+
     &:after {
       content: '';
       width: 100%;
@@ -50,6 +52,15 @@
       background: #ffffffe6;
       position: absolute;
       top: 80px;
+    }
+
+    &-open {
+      max-height: 800px;
+      overflow: auto;
+      cursor: auto;
+      &:after {
+        display: none;
+      }
     }
   }
 
