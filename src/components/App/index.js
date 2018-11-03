@@ -14,6 +14,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+          <div className="app-bg"/>
           <div className="container">
             <Header/>
             <section className="content">
