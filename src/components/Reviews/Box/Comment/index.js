@@ -18,7 +18,7 @@ class Comment extends Component {
 
   expandText() {
     this.setState({
-      showFullDesc: true
+      showFullText: true
     });
   }
 
@@ -27,7 +27,7 @@ class Comment extends Component {
       <div className="comment">
         <span className="comment-header">Comment</span>
         <p
-          className={`comment-text ${this.state.showFullDesc ? 'comment-text-open' : ''}`}
+          className={`comment-text ${this.state.showFullText ? 'comment-text-open' : ''}`}
           onClick={this.expandText}
         >
           {this.props.comment.text}

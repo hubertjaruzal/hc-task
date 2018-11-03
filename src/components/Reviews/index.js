@@ -28,7 +28,7 @@ class Reviews extends Component {
 
   setIsLoading(value) {
     this.setState({
-      isLoading: value
+      isLoading: Boolean(value)
     });
   }
 

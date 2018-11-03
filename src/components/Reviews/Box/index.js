@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import _get from 'lodash/get';
+
 import User from './User';
 import Thumb from './Thumb';
 import Rate from './Rate';
@@ -30,25 +32,25 @@ class Box extends Component {
     return (
       <li className="box">
         <User
-          avatar={this.props.review.user.avatar}
-          name={this.props.review.user.name}
+          avatar={_get(this.props.review, 'user.avatar', '')}
+          name={_get(this.props.review, 'user.name', '')}
         />
-        <span className="box-creation-date">{this.props.review.creation_date}</span>
-        <h2 className="box-title">{this.props.review.title}</h2>
+        <span className="box-creation-date">{_get(this.props.review, 'creation_date', '')}</span>
+        <h2 className="box-title">{_get(this.props.review, 'title', '')}</h2>
         <div className="box-opinion">
-          <Thumb like={this.props.review.like}/>
-          <Rate rate={this.props.review.rate}/>
+          <Thumb like={_get(this.props.review, 'like')}/>
+          <Rate rate={_get(this.props.review, 'rate')}/>
         </div>
         <p 
           className={`box-desc ${this.state.showFullDesc ? 'box-desc-open' : ''}`}
           onClick={this.expandDesc}
         >
-          {this.props.review.desc}
+          {_get(this.props.review, 'desc', '')}
         </p>
         {
-            this.props.review.comment ?
+            _get(this.props.review, 'comment') ?
             <Comment comment={this.props.review.comment}/> :
-            <AddComment reviewID={this.props.review.id}/>
+            <AddComment reviewID={_get(this.props.review, 'id')}/>
         }
       </li>
     );
