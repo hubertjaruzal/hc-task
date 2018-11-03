@@ -1,18 +1,20 @@
 @import "src/utils/variables.scss";
 
 nav {
-  height: 110px;
+  height: auto;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   background: white;
   box-shadow: 0px 0px 25px 0px #6d6d6d;
-  padding: 0 20px;
+  padding: 20px 20px;
   box-sizing: border-box;
-
+    
   .logo {
     width: 120px;
-    height: 100%;
+    height: 30px;
     g g path:nth-child(2) {
       fill: $primary-color;
     }
@@ -20,21 +22,53 @@ nav {
 
   ul {
     display: flex;
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0;
     list-style: none;
+    flex-wrap: wrap;
+
+    li {
+      flex: 1;
+    }
+
     li a {
       height: 100%;
       display: flex;
       align-items: center;
-      padding: 0 20px;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
       text-decoration: none;
       color: $primary-color;
       font-size: 14px;
+      box-sizing: border-box;
 
       &.active  {
         background: $app-grey;
         color: black;
+      }
+    }
+  }
+
+  @media #{$medium-and-up} {
+    height: 110px;
+    flex-direction: row;
+    padding: 0 20px;
+  
+    .logo {
+      height: 100%;
+    }
+  
+    ul {
+      height: 100%;
+      margin: 0;
+
+      li {
+        flex: auto;
+      }
+
+      li a {
+        padding: 0 20px;
       }
     }
   }

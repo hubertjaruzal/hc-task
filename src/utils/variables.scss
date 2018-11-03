@@ -1,2 +1,11 @@
 $primary-color: #0059a2;
 $app-grey: #f5f6f7;
+
+/**
+*   Media queries
+*/
+
+$extra-small-only: "only screen and (max-width: 767px)";
+$small-and-up: "only screen and (min-width: 767px)";
+$medium-and-up: "only screen and (min-width: 961px)";
+$large-and-up: "only screen and (min-width: 1171px)";

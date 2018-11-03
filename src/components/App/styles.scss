@@ -8,10 +8,15 @@
   align-items: center;
   flex-direction: column;
   background: url('../../assets/images/bg_beach.jpg');
-  background-size: 100% 600px;
+  background-size: auto 600px;
   background-repeat: no-repeat;
   box-sizing: border-box;
   padding: 25px 25px 0 25px;
+  
+
+  @media #{$medium-and-up} {
+    background-size: 100% 600px;
+  }
 }
 
 .container {
